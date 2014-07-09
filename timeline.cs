@@ -16,7 +16,7 @@ namespace CmdTimelines {
         }
         public override void Initialize() {
             Commands.ChatCommands.Add(new Command("timeline.admin.use", TimelineDo, "timeline", "tl") {
-                HelpText = "Commands: /timeline start <file>, /timeline stop <file>, /timeline show"
+                HelpText = "Commands: /timeline start <file> [arguments], /timeline stop <file>, /timeline show"
             });
         }
         public override Version Version {
@@ -33,7 +33,7 @@ namespace CmdTimelines {
         }
 
         void TimelineDo(CommandArgs e) {
-            string text = "Invalid command! Commands: /timeline start <file>, /timeline stop <file>, /timeline show";
+            string text = "Invalid command! Commands: /timeline start <file> [arguments], /timeline stop <file>, /timeline show";
             if (e.Parameters.Count < 1) e.Player.SendErrorMessage(text);
             else {
                 string filename;
