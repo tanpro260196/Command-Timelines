@@ -1,0 +1,5 @@
+E:\TShock mods\Command-Timelines\obj\Release\timeline.csprojResolveAssemblyReference.cache
+C:\Users\Zak\Desktop\build\timeline.dll
+C:\Users\Zak\Desktop\build\timeline.pdb
+E:\TShock mods\Command-Timelines\obj\Release\timeline.dll
+E:\TShock mods\Command-Timelines\obj\Release\timeline.pdb
