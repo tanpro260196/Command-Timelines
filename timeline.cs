@@ -15,12 +15,12 @@ namespace CmdTimelines {
         public CmdTimelines(Main game) : base(game) {
         }
         public override void Initialize() {
-            Commands.ChatCommands.Add(new Command("timeline.admin.use", TimelineDo, "timeline", "tl") {
+            Commands.ChatCommands.Add(new Command("", TimelineDo, "timeline", "tl") {
                 HelpText = "Commands: /timeline start <file> [arguments], /timeline stop <file>, /timeline show"
             });
         }
         public override Version Version {
-            get { return new Version("1.0"); }
+            get { return new Version("1.0.1"); }
         }
         public override string Name {
             get { return "Command Timelines"; }
@@ -35,6 +35,8 @@ namespace CmdTimelines {
         void TimelineDo(CommandArgs e) {
             string text = "Invalid command! Commands: /timeline start <file> [arguments], /timeline stop <file>, /timeline show";
             if (e.Parameters.Count < 1) e.Player.SendErrorMessage(text);
+            else if (e.Parameters[0] != "show" && e.Parameters.Count >= 2 && !e.Player.Group.HasPermission("timeline.admin.useall") && !e.Player.Group.HasPermission(String.Concat("timeline.use-", e.Parameters[1])) && !e.Player.Group.HasPermission(String.Concat("timeline.use-", Path.GetDirectoryName(e.Parameters[1]))) && !e.Player.Group.HasPermission(String.Concat("timeline.use-", Path.GetDirectoryName(e.Parameters[1])).Replace("\\", "/")))
+                e.Player.SendErrorMessage("You don't have permission to use that command.");
             else {
                 string filename;
                 if (e.Parameters.Count >= 2) filename = e.Parameters[1];
