@@ -9,7 +9,7 @@ using System.IO;
 using System.Timers;
 
 namespace CmdTimelines {
-    [ApiVersion(1, 16)]
+    [ApiVersion(1, 17)]
     public class CmdTimelines : TerrariaPlugin {
         List<Timeline> running = new List<Timeline>();
         public CmdTimelines(Main game) : base(game) {
@@ -20,7 +20,7 @@ namespace CmdTimelines {
             });
         }
         public override Version Version {
-            get { return new Version("1.0.1"); }
+            get { return new Version("1.0.2"); }
         }
         public override string Name {
             get { return "Command Timelines"; }
