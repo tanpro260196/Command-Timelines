@@ -20,7 +20,7 @@ namespace CmdTimelines {
             });
         }
         public override Version Version {
-            get { return new Version("1.0.2"); }
+            get { return new Version("1.0.3"); }
         }
         public override string Name {
             get { return "Command Timelines"; }
