@@ -107,7 +107,7 @@ namespace CmdTimelines {
                 if(arguments.Count > 0) line = String.Format(line, arguments.ToArray());
                 if (line.StartsWith(Commands.SilentSpecifier)) {
                     silent = true;
-                    line.Remove(0, 1);
+                    line = line.Remove(0, Commands.SilentSpecifier.Length);
                 }
                 if (!line.StartsWith("//")) {
                     if (line.Contains("//")) {
