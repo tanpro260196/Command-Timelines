@@ -101,9 +101,14 @@ namespace CmdTimelines {
             going = true;
             string line;
             bool canClose = true;
+            bool silent = false;
             while ((line = tl.ReadLine()) != null) {
                 lineNumber++;
                 if(arguments.Count > 0) line = String.Format(line, arguments.ToArray());
+                if (line.StartsWith(Commands.SilentSpecifier)) {
+                    silent = true;
+                    line.Remove(0, 1);
+                }
                 if (!line.StartsWith("//")) {
                     if (line.Contains("//")) {
                         line = line.Remove(line.IndexOf("//"));
@@ -132,7 +137,7 @@ namespace CmdTimelines {
                         }
                     } else {
                         try {
-                            Commands.HandleCommand(player, String.Concat(TShock.Config.CommandSpecifier, line));
+                            Commands.HandleCommand(player, String.Concat(silent ? Commands.SilentSpecifier : Commands.Specifier, line));
                         }
                         catch {
                             Console.WriteLine("Timeline {0} had an error at line {1}.", file, lineNumber);
