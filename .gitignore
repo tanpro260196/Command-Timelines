@@ -3,6 +3,7 @@ Thumbs.db
 ehthumbs.db
 
 # Unnecessary stuff
+[Bb]in/
 [Oo]bj/
 *.pdb
 *.vshost.*
