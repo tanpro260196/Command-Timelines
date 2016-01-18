@@ -6,6 +6,8 @@ ehthumbs.db
 [Oo]bj/
 *.pdb
 *.vshost.*
+.vs/
+*.csproj.user
 
 # Folder config file
 Desktop.ini
