@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using TShockAPI;
 using Terraria;
 using TerrariaApi.Server;
-using System.IO;
+using TShockAPI;
 
 namespace CommandTimelines
 {
-	[ApiVersion(1, 24)]
+	[ApiVersion(2, 0)]
 	public partial class CommandTimelines : TerrariaPlugin
 	{
 		public override string Author => "GameRoom & Enerdy";
