@@ -6,7 +6,7 @@ using TShockAPI;
 
 namespace CommandTimelines
 {
-	[ApiVersion(2, 0)]
+	[ApiVersion(2, 1)]
 	public partial class CommandTimelines : TerrariaPlugin
 	{
 		public override string Author => "GameRoom & Enerdy";
